@@ -1,3 +1,7 @@
 # Ignore dataset
 data/
 *.tar.gz
+data/cifar-10-batches-py/
+
+# Ignore Python cache
+__pycache__/
