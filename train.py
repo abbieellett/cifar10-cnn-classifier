@@ -41,3 +41,7 @@ for epoch in range(epoch_num):
         correct += (predicted == labels).sum().item()
 
     print(f'Epoch {epoch+1}/{epoch_num}, Loss: {batch_losses/len(trainloader):.3f}, Accuracy: {100*(correct_class/total):.2f}%')
+
+# save model
+torch.save(model.state_dict(), 'model.pth')
+print('Training finished, new model saved')
