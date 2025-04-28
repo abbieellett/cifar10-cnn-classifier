@@ -30,6 +30,7 @@ for epoch in range(epoch_num):
         inputs = inputs.to(device)
         labels = labels.to(device)
 
+        optimiser.zero_grad() # clear old gradient from last batch
         outputs = model(inputs) # run through model
         loss = loss_function(outputs, labels)
         loss.backward() # calculate gradients of loss
