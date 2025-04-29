@@ -7,6 +7,8 @@ if __name__ == '__main__':
     device = torch.device('cpu')
 
     transform = transforms.Compose([
+        transforms.RandomHorizontalFlip(),        # randomly flip images horizontally
+        transforms.RandomCrop(32, padding=4),      # randomly crop with padding
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
