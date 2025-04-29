@@ -16,3 +16,15 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, 
 model = ClassifierCNN().to(device)
 model.load_state_dict(torch.load('model.pth'))
 model.eval()
+
+correct = 0
+total = 0
+# not tracking gradients
+with torch.no_grad():
+    for inputs, labels in testloader:
+        inputs = inputs.to(device)
+        labels = labels.to(device)
+        outputs = model(inputs)
+        _, predicted = torch.max(outputs, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
