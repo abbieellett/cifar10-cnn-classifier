@@ -1,7 +1,10 @@
-# Ignore dataset
+# ignore dataset
 data/
 *.tar.gz
 data/cifar-10-batches-py/
 
-# Ignore Python cache
+# ignore Python cache
 __pycache__/
+
+# ignore model.pth
+model.pth
