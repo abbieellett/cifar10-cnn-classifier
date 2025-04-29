@@ -24,7 +24,7 @@ if __name__ == '__main__':
     optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
 
     # training loop
-    epoch_num = 10
+    epoch_num = 25
     for epoch in range(epoch_num):
         batch_losses = 0.0
         correct = 0 # number of images classified correctly
