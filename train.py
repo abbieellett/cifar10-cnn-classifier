@@ -19,6 +19,7 @@ if __name__ == '__main__':
 
     # model, loss and optimiser
     model = ClassifierCNN().to(device)
+    model.train()
     loss_function = torch.nn.CrossEntropyLoss()
     #*********** lr can be changed ***********
     optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
