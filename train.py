@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     #*********** batch size can be changed ***********
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=2)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
 
     # model, loss and optimiser
     model = ClassifierCNN().to(device)
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
 
     # training loop
-    epoch_num = 25
+    epoch_num = 30
     for epoch in range(epoch_num):
         batch_losses = 0.0
         correct = 0 # number of images classified correctly
