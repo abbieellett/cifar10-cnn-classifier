@@ -15,6 +15,7 @@ class ClassifierCNN(nn.Module):
         self.pool = nn.MaxPool2d(2, 2)
         # first fully connected layer - input 4069 neurons, output 512 neurons
         self.fc1 = nn.Linear(128 * 4 * 4, 512)
+        self.dropout = nn.Dropout(0.5) # random dropping
         # output layer - 10 output classes
         self.fc2 = nn.Linear(512, 10)
 
