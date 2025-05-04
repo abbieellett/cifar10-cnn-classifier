@@ -23,7 +23,7 @@ if __name__ == '__main__':
     loss_function = torch.nn.CrossEntropyLoss()
     #*********** lr can be changed ***********
     optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
-    scheduler = torch.optim.lr_scheduler.StepLR(optimiser, step_size=10, gamma=0.5)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimiser, step_size=30, gamma=0.1)
 
     # training loop
     epoch_num = 50
