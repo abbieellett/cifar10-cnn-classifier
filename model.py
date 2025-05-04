@@ -26,7 +26,8 @@ class ClassifierCNN(nn.Module):
         # flatten
         x = x.view(x.size(0), -1)
         # pass through first layer
-        x = F.relu(self.fc1(x))
+        # x = F.relu(self.fc1(x))
+        x = self.dropout(F.relu(self.fc1(x)))
         # pass through output layer
         x = self.fc2(x)
         return x
