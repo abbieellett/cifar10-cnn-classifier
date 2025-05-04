@@ -26,7 +26,7 @@ if __name__ == '__main__':
     scheduler = torch.optim.lr_scheduler.StepLR(optimiser, step_size=10, gamma=0.5)
 
     # training loop
-    epoch_num = 30
+    epoch_num = 50
     for epoch in range(epoch_num):
         batch_losses = 0.0
         correct = 0 # number of images classified correctly
