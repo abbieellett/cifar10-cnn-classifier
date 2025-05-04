@@ -23,6 +23,7 @@ if __name__ == '__main__':
     loss_function = torch.nn.CrossEntropyLoss()
     #*********** lr can be changed ***********
     optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimiser, step_size=10, gamma=0.5)
 
     # training loop
     epoch_num = 30
@@ -44,6 +45,7 @@ if __name__ == '__main__':
             _, predicted = torch.max(outputs, 1) # discard max values
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
+        scheduler.step()
 
         print(f'Epoch {epoch+1}/{epoch_num}, Loss: {batch_losses/len(trainloader):.3f}, Accuracy: {100*(correct/total):.2f}%')
 
