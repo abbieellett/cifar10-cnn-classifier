@@ -46,7 +46,9 @@ Test Accuracy: 74.35%
 ```
 
 ## Results
-- The model achieves ~78% test accuracy on CIFAR-10 using CPU training.
+- Using CPU training:
+  - Train accuracy = 92.37%
+  - Test accuracy = 87.33%
 - Training on GPU is recommended for faster results.
 
 ## Potential Improvements
